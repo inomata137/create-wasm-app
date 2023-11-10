@@ -7,8 +7,8 @@
     "create-wasm-app": ".bin/create-wasm-app.js"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server"
+    "build": "NODE_OPTIONS=\"--openssl-legacy-provider --dns-result-order=ipv4first\" webpack --config webpack.config.js",
+    "start": "NODE_OPTIONS=\"--openssl-legacy-provider --dns-result-order=ipv4first\" webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,9 @@
     "url": "https://github.com/rustwasm/create-wasm-app/issues"
   },
   "homepage": "https://github.com/rustwasm/create-wasm-app#readme",
+  "dependencies": {
+    "wasm-game-of-life": "file:../pkg"
+  },
   "devDependencies": {
     "hello-wasm-pack": "^0.1.0",
     "webpack": "^4.29.3",
